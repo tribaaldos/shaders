@@ -4,7 +4,7 @@ import {
   Lightformer,
   OrbitControls,
 } from "@react-three/drei";
-import { Cybertruck } from '../components/Cybertruck.jsx';
+import { Cybertruck } from "../components/Cybertruck.jsx";
 
 import { useFrame } from "@react-three/fiber";
 import gsap from "gsap";
@@ -12,7 +12,7 @@ import { useLayoutEffect, useRef } from "react";
 import * as THREE from "three";
 
 const shiningWhite = new THREE.Color(1.1, 1.1, 1.1);
-const shiningRed = new THREE.Color(4.8, 0.1, 0.1);
+const shiningRed = new THREE.Color(2.0, 0.5, 0.6);
 
 export const Experience = () => {
   const podium = useRef();
@@ -85,7 +85,7 @@ export const Experience = () => {
       </group>
       <group scale={[3, 0.4, 3]} position={[0, -0.2, 0]} ref={podium}>
         <mesh receiveShadow>
-          <cylinderGeometry />
+          <boxGeometry />
           <meshStandardMaterial
             metalness={0.8}
             roughness={0.4}
@@ -96,7 +96,7 @@ export const Experience = () => {
           position={[0, 0.51, 0]}
           rotation={[-Math.PI / 2, 0, Math.PI / 2.5]}
         >
-          <ringGeometry args={[0.92, 1, 32]} />
+          <ringGeometry args={[0.4, 0.8, 3, 32, 6.28318, 6, 28318]} />
           <meshStandardMaterial
             color={shiningRed}
             toneMapped={false}
