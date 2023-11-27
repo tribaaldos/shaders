@@ -11,6 +11,7 @@ import gsap from "gsap";
 import { useLayoutEffect, useRef } from "react";
 import * as THREE from "three";
 
+import Box from './Shader.jsx'
 const shiningWhite = new THREE.Color(1.1, 1.1, 1.1);
 const shiningRed = new THREE.Color(2.0, 0.5, 0.6);
 
@@ -83,6 +84,7 @@ export const Experience = () => {
       <group ref={car}>
         <Cybertruck />
       </group>
+      <Box />
       <group scale={[3, 0.4, 3]} position={[0, -0.2, 0]} ref={podium}>
         <mesh receiveShadow>
           <boxGeometry />

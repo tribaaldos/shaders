@@ -41,30 +41,30 @@ extend({ TestShaderMaterial });
 export function Cybertruck(props) {
   const { nodes, materials } = useGLTF("./models/cybertruck.gltf");
 
-  // const { shader } = useControls({
-  //   shader: {
-  //     options: ["none", "test", "stripes"],
-  //   },
-  // });
+  const { shader } = useControls({
+    shader: {
+      options: ["none", "test", "stripes"],
+    },
+  });
 
-  // const testControls = useControls("test", {
-  //   color: '#FF0000'
-  // });
+  const testControls = useControls("test", {
+    color: '#FF0000'
+  });
 
-  // const stripesControls = useControls("stripes", {
-  //   alpha: {
-  //     min: 0,
-  //     max: 1,
-  //     value: 0.5,
-  //   },
-  //   multiplier: {
-  //     min: 1,
-  //     max: 142,
-  //     value: 42,
-  //   },
-  //   colorA: "#FF0000",
-  //   colorB: "#FFFF00",
-  // });
+  const stripesControls = useControls("stripes", {
+    alpha: {
+      min: 0,
+      max: 1,
+      value: 0.5,
+    },
+    multiplier: {
+      min: 1,
+      max: 142,
+      value: 42,
+    },
+    colorA: "#FF0000",
+    colorB: "#FFFF00",
+  });
 
   const ref = useRef();
 
@@ -109,10 +109,10 @@ export function Cybertruck(props) {
         castShadow
       />
       {/* BODY MESH -> SHADER */}
-      <mesh geometry={nodes.interior001_6.geometry}>
+      {/* <mesh geometry={nodes.interior001_6.geometry}>
           <testShaderMaterial />
-        </mesh>
-      {/* {shader === "test" && (
+        </mesh> */}
+      {shader === "test" && (
         <mesh geometry={nodes.interior001_6.geometry}>
           <testShaderMaterial ref={ref} />
         </mesh>
@@ -128,7 +128,7 @@ export function Cybertruck(props) {
             uColorB={stripesControls.colorB}
           />
         </mesh>
-      )} */}
+      )}
 
       <mesh geometry={nodes.steer.geometry} material={materials.gray} />
       <mesh
