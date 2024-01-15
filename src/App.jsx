@@ -6,6 +6,8 @@ import { BrowserRouter } from "react-router-dom";
 import { Routes, Route } from 'react-router-dom';
 import NavBar from './components/NavBar'
 import New from './New';
+import NewSecond from "./NewSecond";
+
 function App() {
   return (
     <>
@@ -13,6 +15,7 @@ function App() {
       <NavBar />
       <Routes>
         <Route path="/new" element={<New />} ></Route>
+        <Route path="/new1" element={<NewSecond />} ></Route>
       </Routes>
     </BrowserRouter>
       <Canvas

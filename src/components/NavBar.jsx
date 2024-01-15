@@ -4,6 +4,7 @@ export default function Navbar() {
     return (
         <nav className="navbar">
             <button className="btn"><Link to ="/new">New shader </Link></button>
+            <button className="btn"><Link to ="/new1"> Second shader </Link></button>
         </nav>
     )
 }
