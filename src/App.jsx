@@ -7,7 +7,7 @@ import { Routes, Route } from 'react-router-dom';
 import NavBar from './components/NavBar'
 import New from './New';
 import NewSecond from "./NewSecond";
-
+import Interface from "./Interface";
 function App() {
   return (
     <>
@@ -18,6 +18,7 @@ function App() {
         <Route path="/new1" element={<NewSecond />} ></Route>
       </Routes>
     </BrowserRouter>
+    <Interface />
       <Canvas
         shadows
         camera={{
@@ -26,7 +27,7 @@ function App() {
           fov: 42,
         }}
       >
-        <color attach="background" args={["#15151a"]} />
+        {/* <color attach="background" args={["#15151a"]} /> */}
         <Experience />
         <EffectComposer>
           <Bloom

@@ -5,7 +5,7 @@ import {
   OrbitControls,
 } from "@react-three/drei";
 import { Cybertruck } from "../components/Cybertruck.jsx";
-
+import { TeslaModel3 } from "./TeslaModel3.jsx";
 import { useFrame } from "@react-three/fiber";
 import gsap from "gsap";
 import { useLayoutEffect, useRef } from "react";
@@ -84,6 +84,8 @@ export const Experience = () => {
       <group ref={car}>
         <Cybertruck />
       </group>
+      <TeslaModel3 scale={0.010} position={[4, -0.5, 5]} />
+
       <Box />
       <group scale={[3, 0.4, 3]} position={[0, -0.2, 0]} ref={podium}>
         <mesh receiveShadow>
@@ -144,73 +146,6 @@ export const Experience = () => {
         />
       </mesh>
 
-      <Environment resolution={512}>
-        {/* Ceiling */}
-        <Lightformer
-          intensity={2}
-          rotation-x={Math.PI / 2}
-          position={[0, 4, -9]}
-          scale={[10, 1, 1]}
-        />
-        <Lightformer
-          intensity={2}
-          rotation-x={Math.PI / 2}
-          position={[0, 4, -6]}
-          scale={[10, 1, 1]}
-        />
-        <Lightformer
-          intensity={2}
-          rotation-x={Math.PI / 2}
-          position={[0, 4, -3]}
-          scale={[10, 1, 1]}
-        />
-        <Lightformer
-          intensity={2}
-          rotation-x={Math.PI / 2}
-          position={[0, 4, 0]}
-          scale={[10, 1, 1]}
-        />
-        <Lightformer
-          intensity={2}
-          rotation-x={Math.PI / 2}
-          position={[0, 4, 3]}
-          scale={[10, 1, 1]}
-        />
-        <Lightformer
-          intensity={2}
-          rotation-x={Math.PI / 2}
-          position={[0, 4, 6]}
-          scale={[10, 1, 1]}
-        />
-        <Lightformer
-          intensity={2}
-          rotation-x={Math.PI / 2}
-          position={[0, 4, 9]}
-          scale={[10, 1, 1]}
-        />
-        {/* Sides */}
-        <Lightformer
-          intensity={2}
-          rotation-y={Math.PI / 2}
-          position={[-50, 2, 0]}
-          scale={[100, 2, 1]}
-        />
-        <Lightformer
-          intensity={2}
-          rotation-y={-Math.PI / 2}
-          position={[50, 2, 0]}
-          scale={[100, 2, 1]}
-        />
-        {/* Key */}
-        <Lightformer
-          form="ring"
-          color="red"
-          intensity={10}
-          scale={2}
-          position={[10, 5, 10]}
-          onUpdate={(self) => self.lookAt(0, 0, 0)}
-        />
-      </Environment>
     </>
   );
 };
