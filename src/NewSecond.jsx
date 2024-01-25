@@ -9,9 +9,7 @@ import * as THREE from "three";
 
 const ShaderSecond = shaderMaterial(
   {
-    u_time: { value: 0 },
 
-    u_color: { value: new THREE.Color(0xff0000) },
   },
   SecondVertex,
   SecondFragment
