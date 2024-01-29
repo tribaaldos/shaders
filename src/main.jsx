@@ -1,11 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
-import "./Interface.css";
+import "./App.css";
 import { Leva } from 'leva';
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <App />
     <Leva />
+    <App />
   </React.StrictMode>
 );

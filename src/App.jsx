@@ -1,33 +1,31 @@
 import { Canvas } from "@react-three/fiber";
 import { Bloom, EffectComposer } from "@react-three/postprocessing";
-import { Experience } from "./components/Experience";
-import * as THREE from "three";
-import { BrowserRouter } from "react-router-dom";
-import { Routes, Route } from 'react-router-dom';
-import NavBar from './components/NavBar'
-import New from './New';
+import { Experience } from "./Experience";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import NavBar from "./components/NavBar";
+import New from "./New";
 import NewSecond from "./NewSecond";
-import Interface from "./Interface";
+import { Interface } from "./Interface";
+import { useState } from "react";
+
 function App() {
+  const [section, setSection] = useState(0);
   return (
     <>
-    <BrowserRouter>
-      <NavBar />
-      <Routes>
-        <Route path="/new" element={<New />} ></Route>
-        <Route path="/new1" element={<NewSecond />} ></Route>
-      </Routes>
-    </BrowserRouter>
-    <Interface />
+      <BrowserRouter>
+        <NavBar />
+        <Routes>
+          <Route path="/new" element={<New />} />
+          <Route path="/new1" element={<NewSecond />} />
+        </Routes>
+      </BrowserRouter>
       <Canvas
         shadows
         camera={{
-          // position: [0, 3, 9],
-          position: [4, 8, 8],
+          position: [0, 10, 30],
           fov: 42,
         }}
       >
-        {/* <color attach="background" args={["#15151a"]} /> */}
         <Experience />
         <EffectComposer>
           <Bloom
@@ -38,6 +36,7 @@ function App() {
           />
         </EffectComposer>
       </Canvas>
+      <Interface section={section} onSectionChange={setSection}/>
     </>
   );
 }
